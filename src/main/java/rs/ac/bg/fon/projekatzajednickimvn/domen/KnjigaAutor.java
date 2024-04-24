@@ -5,44 +5,78 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author MRDAK-PC
+ * Predstavlja vezu izmedju jedne knjige i jednog autora u biblioteci.
+ * Sadrzi id,knjigu i autora.
+ * @author Filip Mrdak
  */
 public class KnjigaAutor implements OpstiDomenskiObjekat {
-
+    /**
+     * id veze izmedju knjige i autora.
+     */
     private int knjigaAutorId;
+    /**
+     * Knjiga koja je povezana sa autorom.
+     */
     private Knjiga knjiga;
+    /**
+     * Autor koji je povezan sa knjigom.
+     */
     private Autor autor;
-
+    /**
+     * Podrazumevani konstruktor koji kreira novi objekat klase KnjigaAutor.
+     */
     public KnjigaAutor() {
     }
-
+    /**
+     * Parametrizovani konstruktor koji kreira novi objekat klase KnjigaAutor i postavlja vrednosti atributa na unete vrednosti.
+     * @param knjigaAutorId 
+     * @param knjiga
+     * @param autor 
+     */
     public KnjigaAutor(int knjigaAutorId, Knjiga knjiga, Autor autor) {
         this.knjigaAutorId = knjigaAutorId;
         this.knjiga = knjiga;
         this.autor = autor;
     }
-
+    /**
+     * Postavlja id veze izmedju knjige i autora.
+     * @param knjigaAutorId - id veze knjige i autora.
+     */
     public void setKnjigaAutorId(int knjigaAutorId) {
         this.knjigaAutorId = knjigaAutorId;
     }
-
+    /**
+     * Postavlja knjigu koja je povezana sa autorom.
+     * @param knjiga - knjiga koja je povezana sa autorom.
+     */
     public void setKnjiga(Knjiga knjiga) {
         this.knjiga = knjiga;
     }
-
+    /**
+     * Postavlja autora koji je povezan sa knjigom
+     * @param autor - autor koji je povezan sa knjigom.
+     */
     public void setAutor(Autor autor) {
         this.autor = autor;
     }
-
+    /**
+     * Vraca id veze izmedju knjige i autora.
+     * @return id veze izmedju knjige i autora.
+     */
     public int getKnjigaAutorId() {
         return knjigaAutorId;
     }
-
+    /**
+     * Vraca knjigu koja je povezana sa autorom.
+     * @return knjiga koja je povezana sa autorom.
+     */
     public Knjiga getKnjiga() {
         return knjiga;
     }
-
+    /**
+     * Vraca autora koji je povezan sa knjigom.
+     * @return autor koji je povezan sa knjigom.
+     */
     public Autor getAutor() {
         return autor;
     }
