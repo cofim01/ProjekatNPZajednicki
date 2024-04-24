@@ -5,38 +5,65 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author MRDAK-PC
+ * Predstavlja jedan zanr knjige u bazi podataka.
+ * Zanr ima svoj id i naziv.
+ * @author Filip Mrdak
  */
 public class Zanr implements OpstiDomenskiObjekat {
-
+    /**
+     * Id zanra knjige kao int.
+     */
     private int zanrId;
+    /**
+     * Naziv zanra knjige kao String.
+     */
     private String naziv;
-
+    /**
+     * Podrazumevani konstrktor koji kreira novi zanr knjige.
+     */
     public Zanr() {
     }
-
+    /**
+     * Parametrizovani konstruktor koji kreira novi zanr i postavlja vrednosti atributa zanra na unete vrednosti.
+     * @param zanrId - id novog zanra knjige.
+     * @param naziv - naziv novog zanra knjige.
+     */
     public Zanr(int zanrId, String naziv) {
         this.zanrId = zanrId;
         this.naziv = naziv;
     }
-
+    /**
+     * Postavlja id zanra knjige na unetu vrednost.
+     * @param zanrId - id zanra kao int.
+     */
     public void setZanrId(int zanrId) {
         this.zanrId = zanrId;
     }
-
+    /**
+     * Postavlja naziv zanra na unetu vrednost.
+     * @param naziv - naziv zanra kao String.
+     */
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
-
+    /**
+     * Vraca id zanra knjige.
+     * @return id zanra knjige kao int.
+     */
     public int getZanrId() {
         return zanrId;
     }
-
+    /**
+     * Vraca naziv zanra knjige.
+     * @return naziv zanra knjige kao String
+     */
     public String getNaziv() {
         return naziv;
     }
-
+    /**
+     * Vraca string sa informacijom o nazivu zanra.
+     * 
+     */
     @Override
     public String toString() {
         return naziv;
