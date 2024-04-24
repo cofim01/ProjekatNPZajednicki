@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *Predstavlja jednog autora knjige koji ima ime, prezime i id.
+ *Predstavlja jednog autora knjige u bazi podataka koji ima ime, prezime i id.
  * @author Filip Mrdak
  */
 
