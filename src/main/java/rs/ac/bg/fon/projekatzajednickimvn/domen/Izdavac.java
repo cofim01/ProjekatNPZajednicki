@@ -5,38 +5,66 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author MRDAK-PC
+ * Predstavlja jednog izdavaca knjige u bazi podataka.
+ * Izdavac ima svoj id i naziv.
+ * @author Filip Mrdak
  */
 public class Izdavac implements OpstiDomenskiObjekat {
-
+    /**
+     * Id izadavaca knjige kao int.
+     */
     private int izdavacId;
+    /**
+     * Naziv izdavaca knjige kao String.
+     */
     private String naziv;
-
+    /**
+     * Podrazumevani konstruktor koji kreira novog Izdavaca.
+     */
     public Izdavac() {
     }
-
+    /**
+     * Parametrizovan konstruktor koji kreira novog izdavaca i postavlja vrednosti atributa (izdavacId, naziv) na unete vrednosti.
+     * @param izdavacId - id izdavaca kao int.
+     * @param naziv -  naziv izdavaca kao String.
+     */
     public Izdavac(int izdavacId, String naziv) {
         this.izdavacId = izdavacId;
         this.naziv = naziv;
     }
-
+    /**
+     * Postavlja id izadavaca na unetu vrednost.
+     * @param izdavacId - id izdavaca kao int.
+     */
     public void setIzdavacId(int izdavacId) {
         this.izdavacId = izdavacId;
     }
-
+    /**
+     * Postavlja naziv izdavaca na unetu vrednost.
+     * @param naziv - naziv izdavaca kao String.
+     */
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
-
+    /**
+     * Vraca id izdavaca knjige.
+     * @return id izdavaca kao int.
+     */
     public int getIzdavacId() {
         return izdavacId;
     }
-
+    /**
+     * Vraca naziv izdavaca knjige.
+     * @return naziv izdavaca kao String.
+     */
     public String getNaziv() {
         return naziv;
     }
 
+    /**
+     * Vraca string sa informacijama o nazivu izdavaca.
+     * 
+     */
     @Override
     public String toString() {
         return naziv;
