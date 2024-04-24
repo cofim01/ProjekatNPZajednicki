@@ -6,20 +6,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author MRDAK-PC
+ *Predstavlja jednu knjigu u bazi podataka.
+ * Svaka knjiga ima svoj id, naziv, zanr, korisnika koji je kreirao tu knjigu i listu primeraka vezanih za tu knjigu.
+ * @author Filip Mrdak
  */
 public class Knjiga implements OpstiDomenskiObjekat {
-
+    /**
+     * Id knjige kao int.
+     */
     private int knjigaId;
+    /**
+     * Naziv knjige kao String.
+     */
     private String naziv;
+    /**
+     * Zanr knjige.
+     */
     private Zanr zanr;
+    /**
+     * Korsnik koji je kreirao knjigu.
+     */
     private Korisnik korisnik;
+    /**
+     * Lista primeraka knjige (ArrayList). 
+     */
     private ArrayList<PrimerakKnjige> primerci=new ArrayList<>();
-
+    
+    /**
+     * Podrazumevani konstruktor koji kreira novu knjigu.
+     */
     public Knjiga() {
     }
-
+    /**
+     * Parametrizovani konstruktor koji kreira novu knjigu i postavlja vrednosti atributa knjige na unete vrednosti.
+     * @param knjigaId - id knjige kao int.
+     * @param naziv - naziv knjige kao String.
+     * @param zanr - zanr knjige.
+     * @param korisnik - korsnik koji je kreirao knjigu.
+     */
     public Knjiga(int knjigaId, String naziv, Zanr zanr, Korisnik korisnik) {
         this.knjigaId = knjigaId;
         this.naziv = naziv;
@@ -27,52 +51,85 @@ public class Knjiga implements OpstiDomenskiObjekat {
         this.korisnik = korisnik;
     }
 
-
+    /**
+     * Postavlja id knjige na unetu vrednost.
+     * @param knjigaId - id knjige kao int.
+     */
     public void setKnjigaId(int knjigaId) {
         this.knjigaId = knjigaId;
     }
-
+    /**
+     * Postavlja naziv knjige na unetu vrednost.
+     * @param naziv - naziv knjige kao String.
+     */
     public void setNaziv(String naziv) {
         this.naziv = naziv;
     }
-
+    /**
+     * Postavlja primerke knjige na unetu vrednost.
+     * @param primerci - lista primeraka knjige (ArrayList).
+     */
     public void setPrimerci(ArrayList<PrimerakKnjige> primerci) {
         this.primerci = primerci;
     }
 
     
-
+    /**
+     * Postavlja zanr knjige na unetu vrednost.
+     * @param zanr - zanr knjige.
+     */
     public void setZanr(Zanr zanr) {
         this.zanr = zanr;
     }
-
+    /**
+     * Postavlja korsnika koji je kreirao knjigu na unetog korisnika.
+     * @param korisnik - korsnik koji je kreirao knjigu.
+     */
     public void setKorisnik(Korisnik korisnik) {
         this.korisnik = korisnik;
     }
-
+    /**
+     * Vraca id knjige.
+     * @return id knjige kao int.
+     */
     public int getKnjigaId() {
         return knjigaId;
     }
-
+    /**
+     * Vraca naziv knjige.
+     * @return  naziv knjige kao String.
+     */
     public String getNaziv() {
         return naziv;
     }
 
-
+    /**
+     * Vraca zanr knjige.
+     * @return zanr knjige.
+     */
     public Zanr getZanr() {
         return zanr;
     }
-
+    /**
+     * Vraca listu primeraka knjige.
+     * @return lista primeraka knjige (ArrayList).
+     */
     public ArrayList<PrimerakKnjige> getPrimerci() {
         return primerci;
     }
 
     
-
+    /**
+     * Vraca korisnika koji je kreirao knjigu.
+     * @return korisnik koji je kreirao knjigu.
+     */
     public Korisnik getKorisnik() {
         return korisnik;
     }
-
+    /**
+     * Vraca string sa informacijama o nazivu knjige.
+     * 
+     */
     @Override
     public String toString() {
         return naziv;
