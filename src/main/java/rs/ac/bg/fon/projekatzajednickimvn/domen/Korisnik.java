@@ -103,7 +103,7 @@ public class Korisnik implements OpstiDomenskiObjekat {
     
     /**
      * Vraca informacije o imenu i prezimenu korisnika (administratora).
-     * @return 
+     * 
      */
     @Override
     public String toString() {
