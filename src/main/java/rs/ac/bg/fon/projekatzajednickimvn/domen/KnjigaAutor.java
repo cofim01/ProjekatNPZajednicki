@@ -29,9 +29,9 @@ public class KnjigaAutor implements OpstiDomenskiObjekat {
     }
     /**
      * Parametrizovani konstruktor koji kreira novi objekat klase KnjigaAutor i postavlja vrednosti atributa na unete vrednosti.
-     * @param knjigaAutorId 
-     * @param knjiga
-     * @param autor 
+     * @param knjigaAutorId - id veze izmedju knjige i autora.
+     * @param knjiga - knjiga koja je povezana sa autorom.
+     * @param autor - autor koji je povezan sa knjigom.
      */
     public KnjigaAutor(int knjigaAutorId, Knjiga knjiga, Autor autor) {
         this.knjigaAutorId = knjigaAutorId;
