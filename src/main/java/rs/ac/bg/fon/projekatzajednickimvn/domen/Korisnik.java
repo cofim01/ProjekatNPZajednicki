@@ -6,58 +6,105 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author MRDAK-PC
+ *Predstavlja jednog administratora biblioteke, koji ima svoj id, ime, prezime i password.
+ * @author Filip Mrdak
  */
 public class Korisnik implements OpstiDomenskiObjekat {
-
+    /**
+     * Id korisnika (administratora).
+     */
     private int korisnikId;
+    /**
+     * Ime korisnika (administratora).
+     */
     private String ime;
+    /**
+     * Prezime korisnika (administratora).
+     */
     private String prezime;
+    /**
+     * Sifra korisnika (administratora).
+     */
     private String password;
-
+    /**
+     * Podrazumevani konstruktor koji kreira novog korisnika.
+     */
     public Korisnik() {
     }
-
+    /**
+     * Parametrizovani konstruktor koji kreira novog korisnika i postavlja vrednosti atributa na unete vrednosti.
+     * @param korisnikId - id novog korisnika kao int.
+     * @param ime - ime novog korisnika kao String.
+     * @param prezime - prezime novog korisnika kao String.
+     * @param password - sifra novog korisnika kao String.
+     */
     public Korisnik(int korisnikId, String ime, String prezime, String password) {
         this.korisnikId = korisnikId;
         this.ime = ime;
         this.prezime = prezime;
         this.password = password;
     }
-
+    /**
+     * Postavlja id korisnika na unetu vrednost
+     * @param korisnikId - id korisnika kao int.
+     */
     public void setKorisnikId(int korisnikId) {
         this.korisnikId = korisnikId;
     }
-
+    /**
+     * Postavlja ime korisnika na unetu vrednost.
+     * @param ime - ime korisnika kao String.
+     */
     public void setIme(String ime) {
         this.ime = ime;
     }
-
+    /**
+     * Postavlja prezime korisnika na unetu vrednost.
+     * @param prezime - prezime korisnika kao String. 
+     */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
-
+    /**
+     * Postavlja sifru korisnika na unetu vrednost.
+     * @param password - sifra korisnika kao String.
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-
+    /**
+     * Vraca id korisnika.
+     * @return id korisnika kao int.
+     */
     public int getKorisnikId() {
         return korisnikId;
     }
-
+    /**
+     * Vraca ime korisnika.
+     * @return ime korisnika kao String.
+     */
     public String getIme() {
         return ime;
     }
-
+    /**
+     * Vraca prezime korisnika.
+     * @return prezime korisnika kao String.
+     */
     public String getPrezime() {
         return prezime;
     }
-
+    /**
+     * Vraca sifru korisnika.
+     * @return sifra korisnika kao String.
+     */
     public String getPassword() {
         return password;
     }
     
+    /**
+     * Vraca informacije o imenu i prezimenu korisnika (administratora).
+     * @return 
+     */
     @Override
     public String toString() {
         return ime + " " + prezime;
