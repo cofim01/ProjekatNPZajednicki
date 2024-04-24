@@ -10,7 +10,7 @@ import java.sql.*;
 /**
  * Predstavlja jedno zaduzenje knjige u biblioteci. Svako zaduzenje sadrzi broj zaduzenja, datum zaduzenja, datum razduzenja, primerak knjige koji je zaduzen, clana koji je zaduzio primerak,
  * korisnika koji je kreirao zaduzenje kao datume za filtriranje zaduzenja.
- * @author MRDAK-PC
+ * @author Filip Mrdak
  */
 public class Zaduzenje implements OpstiDomenskiObjekat {
     /**
