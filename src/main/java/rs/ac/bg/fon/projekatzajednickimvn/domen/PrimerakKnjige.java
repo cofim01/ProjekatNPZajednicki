@@ -7,21 +7,48 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author MRDAK-PC
+ * Predstavlja jedan primerak knjige u bazi podataka.
+ * @author Filip Mrdak
  */
 public class PrimerakKnjige implements OpstiDomenskiObjekat{
+    /**
+     * Id primerka knjige kao int.
+     */
     private int primerakId;
+    /**
+     * Broj police na kojoj se nalazi primerak knjige kao int.
+     */
     private int brojPolice;
+    /**
+     * Izdavac primerka knjige.
+     */
     private Izdavac izdavac;
+    /**
+     * Knjiga za koju je vezan primerak.
+     */
     private Knjiga knjiga;
+    /**
+     * Godina izdanja primerka knjige kao int.
+     */
     private int godinaIzdanja;
+    /**
+     * Status primerka knjige u biblioteci.
+     */
     private String status;
     
-
+    /**
+     * Podrazumevani konstruktor koji kreira novi primerak knjige.
+     */
     public PrimerakKnjige() {
     }
-
+    /**
+     * Parametrizovani konstruktor koji kreira novi primerak knjige i postavlja atribute primerka na unete vrednosti.
+     * @param primerakId - id primerka knjige.
+     * @param brojPolice - broj police na kojoj se nalazi primerak knjige.
+     * @param izdavac - izdavac primerka knjige.
+     * @param godinaIzdanja - godina izdanja primerka knjige.
+     * @param status - status primerka knjige u biblioteci.
+     */
     public PrimerakKnjige(int primerakId, int brojPolice, Izdavac izdavac, int godinaIzdanja, String status) {
         this.primerakId = primerakId;
         this.brojPolice = brojPolice;
@@ -30,64 +57,91 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
         this.status = status;
     }
 
-
+    /**
+     * Vraca id primerka knjige.
+     * @return id primerka knjige kao int.
+     */
     public int getPrimerakId() {
         return primerakId;
     }
-
+    /**
+     * Vraca broj police na kojoj se nalazi primerak knjige.
+     * @return broj police kao int.
+     */
     public int getBrojPolice() {
         return brojPolice;
     }
 
-
-    
-
+    /**
+     * Vraca izdavaca primerka knjige.
+     * @return izdavac primerka knjige.
+     */
     public Izdavac getIzdavac() {
         return izdavac;
     }
-
+    /**
+     * Vraca godinu izdanja primerka knjige.
+     * @return godina izdanja primerka knjige.
+     */
     public int getGodinaIzdanja() {
         return godinaIzdanja;
     }
-
+    /**
+     * Vraca status primerka knjige.
+     * @return status primerka knjige kao String.
+     */
     public String getStatus() {
         return status;
     }
-
+    /**
+     * Vraca knjigu za koju je vezan primerak knjige.
+     * @return knjiga za koju je vezan primerak knjige.
+     */
     public Knjiga getKnjiga() {
         return knjiga;
     }
-    
-    
-
+    /**
+     * Postavlja id primerka knjige na unetu vrednost.
+     * @param primerakId - id primerka knjige kao int.
+     */
     public void setPrimerakId(int primerakId) {
         this.primerakId = primerakId;
     }
-
+    /**
+     * Postavlja broj police na kojoj se nalazi primerak knjige na unetu vrednost.
+     * @param brojPolice - broj police kao int.
+     */
     public void setBrojPolice(int brojPolice) {
         this.brojPolice = brojPolice;
     }
-
+    /**
+     * Postavlja izdavaca primerka knjige na unetu vrednost.
+     * @param izdavac - izdavac primerka knjige.
+     */
     public void setIzdavac(Izdavac izdavac) {
         this.izdavac = izdavac;
     }
-
-
-    
-
+    /**
+     * Postavlja godinu izdanja primerka knjige.
+     * @param godinaIzdanja - godina izdanja primerka knjige kao int.
+     */
     public void setGodinaIzdanja(int godinaIzdanja) {
         this.godinaIzdanja = godinaIzdanja;
     }
-
+    /**
+     * Postavlja status primerka knjige na unetu vrednost.
+     * @param status - status primerka knjige kao String.
+     */
     public void setStatus(String status) {
         this.status = status;
     }
-
+    /**
+     * Postavlja knjigu za koju je vezan primerak na unetu knjigu.
+     * @param knjiga - knjiga za koju je vezan primerak.
+     */
     public void setKnjiga(Knjiga knjiga) {
         this.knjiga = knjiga;
     }
-    
-    
 
     @Override
     public String getNazivTabele() {
