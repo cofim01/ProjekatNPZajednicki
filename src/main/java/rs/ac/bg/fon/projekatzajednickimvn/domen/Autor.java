@@ -6,50 +6,92 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author MRDAK-PC
+ *Predstavlja jednog autora knjige koji ima ime, prezime i id.
+ * @author Filip Mrdak
  */
 
 
 public class Autor implements OpstiDomenskiObjekat {
 
+    /**
+     * Id autora kako int.
+     */
     private int autorId;
+    /**
+     * Ime autora kao String.
+     */
     private String ime;
+    /**
+     * Prezime autora kao String.
+     */
     private String prezime;
 
+    /**
+     * Podrazumevani konstruktor koji vraca novi objekat klase Autor.
+     * 
+     * 
+     */
     public Autor() {
     }
 
+    /**
+     * Parametrizovani konstruktor koji postavlja polja id, ime, prezime klase Autor na unete vrednosti i vraca novog autora za unetim vrednostima.
+     * @param autorId - id novog autora kao int.
+     * @param ime - ime novog autora kao String.
+     * @param prezime - prezime novog autora kao String.
+     */
     public Autor(int autorId, String ime, String prezime) {
         this.autorId = autorId;
         this.ime = ime;
         this.prezime = prezime;
     }
 
+    /**
+     * Postavlja id autora na unetu vrednost.
+     * @param autorId - id novog autora kao int. 
+     */
     public void setAutorId(int autorId) {
         this.autorId = autorId;
     }
-
+    /**
+     * Postavlja ime novog autora na unetu vrednost.
+     * @param ime - ime novog autora kao String.
+     */
     public void setIme(String ime) {
         this.ime = ime;
     }
-
+    /**
+     * Postavlja prezime novog autora na unetu vrednost.
+     * @param prezime - prezime novog autora kao String.
+     */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
-
+    /**
+     * Vraca id autora.
+     * @return id autora kao int.
+     */
     public int getAutorId() {
         return autorId;
     }
-
+    /**
+     * Vraca ime autora.
+     * @return ime autora kao String.
+     */
     public String getIme() {
         return ime;
     }
-
+    /**
+     * Vraca prezime autora.
+     * @return prezime autora kao String.
+     */
     public String getPrezime() {
         return prezime;
     }
-
+    /**
+     * Vraca string sa informacijama o imenu i prezimenu autora.
+     * 
+     */
     @Override
     public String toString() {
         return ime + " " + prezime;
