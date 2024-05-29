@@ -10,6 +10,12 @@ import java.io.Serializable;
  * @author Filip Mrdak
  */
 public enum StatusOdgovora implements Serializable{
-    SUCCESS,    // Oznacava uspesan rezultat operacije u sistemu.
-    ERROR;      // Oznacava gresku ili neuspesan rezultat operacije u sistemu.
+    /**
+     * Oznacava uspesan rezultat operacije u sistemu.
+     */
+    SUCCESS,
+    /**
+     * Oznacava gresku ili neuspesan rezultat operacije u sistemu.
+     */
+    ERROR;       
 }
