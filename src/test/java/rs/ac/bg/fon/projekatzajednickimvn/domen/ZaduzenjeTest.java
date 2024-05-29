@@ -163,15 +163,17 @@ public class ZaduzenjeTest {
 
     @Test
     public void testGetKriterijum() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
         z.setDatumOdFilter(new Date());
         z.setDatumDoFilter(new Date());
         Clan clan = new Clan();
         clan.setClanId(1);
         z.setClan(clan);
-
+        String datum = sdf.format(new Date());
         String kriterijum = z.getKriterijum();
 
-        String expected = "WHERE idClan=1 AND DatumZaduzenja >= '2024-05-07' AND DatumZaduzenja <= '2024-05-07' ORDER BY DatumZaduzenja DESC";
+        String expected = "WHERE idClan=1 AND DatumZaduzenja >= '" + datum + "' AND DatumZaduzenja <= '" + datum + "' ORDER BY DatumZaduzenja DESC";
         assertEquals(expected, kriterijum);
     }
 
@@ -194,11 +196,10 @@ public class ZaduzenjeTest {
     public void testGetLista() throws Exception {
         ResultSet rs = mock(ResultSet.class);
         when(rs.next()).thenReturn(true, false);
-        
+
         when(rs.getInt("BrojZaduzenja")).thenReturn(1);
         when(rs.getDate("DatumZaduzenja")).thenReturn(java.sql.Date.valueOf("2024-05-06"));
         when(rs.getDate("DatumRazduzenja")).thenReturn(java.sql.Date.valueOf("2024-05-07"));
-
 
         when(rs.getInt("c.ClanId")).thenReturn(1);
         when(rs.getString("c.Ime")).thenReturn("Marko");
@@ -206,24 +207,19 @@ public class ZaduzenjeTest {
         when(rs.getString("c.BrojTelefona")).thenReturn("123456");
         when(rs.getString("c.Adresa")).thenReturn("Adresa 123");
 
-
         when(rs.getInt("pk.idPrimerak")).thenReturn(1);
         when(rs.getInt("pk.brojPolice")).thenReturn(1);
         when(rs.getInt("pk.godinaIzdanja")).thenReturn(2020);
         when(rs.getString("pk.status")).thenReturn("Dostupna");
 
- 
         when(rs.getInt("i.IzdavacId")).thenReturn(1);
         when(rs.getString("i.Naziv")).thenReturn("Laguna");
-
 
         when(rs.getInt("k.KnjigaId")).thenReturn(1);
         when(rs.getString("k.Naziv")).thenReturn("Naziv knjige");
 
-
         when(rs.getInt("z.ZanrId")).thenReturn(1);
         when(rs.getString("z.Naziv")).thenReturn("Triler");
-
 
         when(rs.getInt("kk.KorisnikId")).thenReturn(1);
         when(rs.getString("kk.Ime")).thenReturn("Nikola");
@@ -236,48 +232,46 @@ public class ZaduzenjeTest {
         when(rs.getString("kz.Prezime")).thenReturn("Petrovic");
         when(rs.getString("kz.Password")).thenReturn("petar45");
 
-        
         ArrayList<OpstiDomenskiObjekat> lista = z.getLista(rs);
-        
 
         assertEquals(1, lista.size());
-        
-        Zaduzenje zaduzenje1 = (Zaduzenje)lista.get(0);
+
+        Zaduzenje zaduzenje1 = (Zaduzenje) lista.get(0);
         assertEquals(1, zaduzenje1.getBrZaduzenja());
         assertEquals(java.sql.Date.valueOf("2024-05-06"), zaduzenje1.getDatumZaduzenja());
         assertEquals(java.sql.Date.valueOf("2024-05-07"), zaduzenje1.getDatumRazduzenja());
-        
+
         //Provera clana
         assertEquals(1, zaduzenje1.getClan().getClanId());
         assertEquals("Marko", zaduzenje1.getClan().getIme());
         assertEquals("Markovic", zaduzenje1.getClan().getPrezime());
         assertEquals("123456", zaduzenje1.getClan().getBrTelefona());
         assertEquals("Adresa 123", zaduzenje1.getClan().getAdresa());
-        
+
         // Provera primerka knjige
         assertEquals(1, zaduzenje1.getPrimerak().getPrimerakId());
         assertEquals(1, zaduzenje1.getPrimerak().getBrojPolice());
         assertEquals(2020, zaduzenje1.getPrimerak().getGodinaIzdanja());
         assertEquals("Dostupna", zaduzenje1.getPrimerak().getStatus());
-        
+
         //Provera izdavaca
         assertEquals(1, zaduzenje1.getPrimerak().getIzdavac().getIzdavacId());
         assertEquals("Laguna", zaduzenje1.getPrimerak().getIzdavac().getNaziv());
-        
+
         //Provera knjige
         assertEquals(1, zaduzenje1.getPrimerak().getKnjiga().getKnjigaId());
         assertEquals("Naziv knjige", zaduzenje1.getPrimerak().getKnjiga().getNaziv());
-        
+
         // Provera zanra knjige
         assertEquals(1, zaduzenje1.getPrimerak().getKnjiga().getZanr().getZanrId());
         assertEquals("Triler", zaduzenje1.getPrimerak().getKnjiga().getZanr().getNaziv());
-        
+
         //Provera korisnika koji je kreirao knjigu
         assertEquals(1, zaduzenje1.getPrimerak().getKnjiga().getKorisnik().getKorisnikId());
-        assertEquals("Nikola",zaduzenje1.getPrimerak().getKnjiga().getKorisnik().getIme());
+        assertEquals("Nikola", zaduzenje1.getPrimerak().getKnjiga().getKorisnik().getIme());
         assertEquals("Nikolic", zaduzenje1.getPrimerak().getKnjiga().getKorisnik().getPrezime());
         assertEquals("Dzoni123", zaduzenje1.getPrimerak().getKnjiga().getKorisnik().getPassword());
-        
+
         //Provera korisnika koji je kreirao zaduzenje
         assertEquals(1, zaduzenje1.getKorisnik().getKorisnikId());
         assertEquals("Petar", zaduzenje1.getKorisnik().getIme());
