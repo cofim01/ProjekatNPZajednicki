@@ -163,15 +163,17 @@ public class ZaduzenjeTest {
 
     @Test
     public void testGetKriterijum() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
         z.setDatumOdFilter(new Date());
         z.setDatumDoFilter(new Date());
         Clan clan = new Clan();
         clan.setClanId(1);
         z.setClan(clan);
-
+        String datum = sdf.format(new Date());
         String kriterijum = z.getKriterijum();
 
-        String expected = "WHERE idClan=1 AND DatumZaduzenja >= '2024-05-07' AND DatumZaduzenja <= '2024-05-07' ORDER BY DatumZaduzenja DESC";
+        String expected = "WHERE idClan=1 AND DatumZaduzenja >= '" + datum + "' AND DatumZaduzenja <= '" + datum + "' ORDER BY DatumZaduzenja DESC";
         assertEquals(expected, kriterijum);
     }
 
