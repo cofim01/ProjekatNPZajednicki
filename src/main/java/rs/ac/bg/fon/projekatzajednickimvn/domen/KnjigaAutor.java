@@ -34,9 +34,9 @@ public class KnjigaAutor implements OpstiDomenskiObjekat {
      * @param autor - autor koji je povezan sa knjigom.
      */
     public KnjigaAutor(int knjigaAutorId, Knjiga knjiga, Autor autor) {
-        this.knjigaAutorId = knjigaAutorId;
-        this.knjiga = knjiga;
-        this.autor = autor;
+        setKnjigaAutorId(knjigaAutorId);
+        setKnjiga(knjiga);
+        setAutor(autor);
     }
     /**
      * Postavlja id veze izmedju knjige i autora.

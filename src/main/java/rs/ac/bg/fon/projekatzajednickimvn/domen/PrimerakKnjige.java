@@ -50,11 +50,11 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
      * @param status - status primerka knjige u biblioteci.
      */
     public PrimerakKnjige(int primerakId, int brojPolice, Izdavac izdavac, int godinaIzdanja, String status) {
-        this.primerakId = primerakId;
-        this.brojPolice = brojPolice;
-        this.izdavac = izdavac;
-        this.godinaIzdanja = godinaIzdanja;
-        this.status = status;
+        setPrimerakId(primerakId);
+        setBrojPolice(brojPolice);
+        setIzdavac(izdavac);
+        setGodinaIzdanja(godinaIzdanja);
+        setStatus(status);
     }
 
     /**

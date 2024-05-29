@@ -29,8 +29,8 @@ public class Izdavac implements OpstiDomenskiObjekat {
      * @param naziv -  naziv izdavaca kao String.
      */
     public Izdavac(int izdavacId, String naziv) {
-        this.izdavacId = izdavacId;
-        this.naziv = naziv;
+        setIzdavacId(izdavacId);
+        setNaziv(naziv);
     }
     /**
      * Postavlja id izadavaca na unetu vrednost.

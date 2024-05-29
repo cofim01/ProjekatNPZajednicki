@@ -39,10 +39,10 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param password - sifra novog korisnika kao String.
      */
     public Korisnik(int korisnikId, String ime, String prezime, String password) {
-        this.korisnikId = korisnikId;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.password = password;
+        setKorisnikId(korisnikId);
+        setIme(ime);
+        setPrezime(prezime);
+        setPassword(password);
     }
     /**
      * Postavlja id korisnika na unetu vrednost

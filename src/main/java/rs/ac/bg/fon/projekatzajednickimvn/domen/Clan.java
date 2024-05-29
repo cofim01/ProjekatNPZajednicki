@@ -5,11 +5,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *Predstavlja jednog clana biblioteke u bazi podataka.
- * Svaki clan ima id, ime, prezime, adresu, broj telefona, email, status i administratora(korisnik) koji je kreirao tog clana.
+ * Predstavlja jednog clana biblioteke u bazi podataka. Svaki clan ima id, ime,
+ * prezime, adresu, broj telefona, email, status i administratora(korisnik) koji
+ * je kreirao tog clana.
+ *
  * @author Filip Mrdak
  */
 public class Clan implements OpstiDomenskiObjekat {
+
     /**
      * id clana biblioteke kao int.
      */
@@ -50,7 +53,9 @@ public class Clan implements OpstiDomenskiObjekat {
     }
 
     /**
-     * Parametrizovani konstruktor koji postavlja atribute klase Clan na unete vrednosti i vraca novog clana sa unetim vrednostima.
+     * Parametrizovani konstruktor koji postavlja atribute klase Clan na unete
+     * vrednosti i vraca novog clana sa unetim vrednostima.
+     *
      * @param clanId - id novog clana biblioteke kao int.
      * @param ime - ime novog clana biblioteke kao String.
      * @param prezime - prezime novog clana biblioteke kao String.
@@ -60,129 +65,162 @@ public class Clan implements OpstiDomenskiObjekat {
      */
     public Clan(int clanId, String ime, String prezime, String adresa,
             String brTelefona, Korisnik korisnik) {
-        this.clanId = clanId;
-        this.ime = ime;
-        this.prezime = prezime;
-        this.adresa = adresa;
-        this.brTelefona = brTelefona;
-        this.korisnik = korisnik;
+        setClanId(clanId);
+        setIme(ime);
+        setPrezime(prezime);
+        setAdresa(adresa);
+        setBrTelefona(brTelefona);
+        setKorisnik(korisnik);
     }
 
     /**
      * Postavlja id clana na unetu vrednost.
+     *
      * @param clanId - id clana kao int.
      */
     public void setClanId(int clanId) {
         this.clanId = clanId;
     }
+
     /**
      * Postavlja ime clana na unetu vrednost.
+     *
      * @param ime - ime clana kao String.
      */
     public void setIme(String ime) {
         this.ime = ime;
     }
+
     /**
      * Postavlja prezime clana na unetu vrednost.
+     *
      * @param prezime - prezime clana kao String.
      */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
+
     /**
      * Postavlja adresu clana na unetu vrednost.
+     *
      * @param adresa - adresa clana kao String.
      */
     public void setAdresa(String adresa) {
         this.adresa = adresa;
     }
+
     /**
      * Postavlja broj telefona clana na unetu vrednost.
+     *
      * @param brTelefona - broj telefona clana kao String.
      */
     public void setBrTelefona(String brTelefona) {
         this.brTelefona = brTelefona;
     }
+
     /**
-     * Postavlja korisnika administratora koji je kreirao datog clana biblioteke.
+     * Postavlja korisnika administratora koji je kreirao datog clana
+     * biblioteke.
+     *
      * @param korisnik - administrator koji je kreirao datog clana biblioteke.
      */
     public void setKorisnik(Korisnik korisnik) {
         this.korisnik = korisnik;
     }
+
     /**
      * Postavlja email clana na unetu vrednost.
+     *
      * @param email - email clana kao String.
      */
     public void setEmail(String email) {
         this.email = email;
     }
+
     /**
      * Postavlja status clana na unetu vrednost.
+     *
      * @param status - status clana kao String.
      */
     public void setStatus(String status) {
         this.status = status;
     }
+
     /**
      * Vraca id clana biblioteke.
+     *
      * @return id clana kao int.
      */
     public int getClanId() {
         return clanId;
     }
+
     /**
      * Vraca ime clana biblioteke.
+     *
      * @return ime clana kao String.
      */
     public String getIme() {
         return ime;
     }
+
     /**
      * Vraca prezime clana biblioteke.
+     *
      * @return prezime clana kao String
      */
     public String getPrezime() {
         return prezime;
     }
+
     /**
      * Vraca adresu clana biblioteke.
+     *
      * @return adresa clana kao String.
      */
     public String getAdresa() {
         return adresa;
     }
+
     /**
      * Vraca broj telefona clana biblioteke.
+     *
      * @return broj telefona clana kao String.
      */
     public String getBrTelefona() {
         return brTelefona;
     }
+
     /**
      * Vraca korsnika koji je kreirao datog clana biblioteke.
+     *
      * @return korsnik koji je kreirao clana.
      */
     public Korisnik getKorisnik() {
         return korisnik;
     }
+
     /**
      * Vraca email clana biblioteke.
+     *
      * @return email clana kao String.
      */
     public String getEmail() {
         return email;
     }
+
     /**
      * Vraca status clana biblioteke.
+     *
      * @return status clana kao String.
      */
     public String getStatus() {
         return status;
     }
+
     /**
      * Vraca string sa informacijama o imenu i prezimenu clana biblioteke.
-     *  
+     *
      */
     @Override
     public String toString() {
@@ -221,7 +259,7 @@ public class Clan implements OpstiDomenskiObjekat {
 
     @Override
     public String vrednostiZaAzuriranje() {
-        return "Adresa='" + adresa + "', BrojTelefona='" + brTelefona + "', Email='" + email + "', Status='" + status+ "'";
+        return "Adresa='" + adresa + "', BrojTelefona='" + brTelefona + "', Email='" + email + "', Status='" + status + "'";
     }
 
     @Override

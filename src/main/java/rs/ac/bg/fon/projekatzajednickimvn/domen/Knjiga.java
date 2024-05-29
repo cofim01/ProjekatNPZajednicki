@@ -45,10 +45,10 @@ public class Knjiga implements OpstiDomenskiObjekat {
      * @param korisnik - korsnik koji je kreirao knjigu.
      */
     public Knjiga(int knjigaId, String naziv, Zanr zanr, Korisnik korisnik) {
-        this.knjigaId = knjigaId;
-        this.naziv = naziv;
-        this.zanr = zanr;
-        this.korisnik = korisnik;
+        setKnjigaId(knjigaId);
+        setNaziv(naziv);
+        setZanr(zanr);
+        setKorisnik(korisnik);
     }
 
     /**

@@ -29,8 +29,8 @@ public class Zanr implements OpstiDomenskiObjekat {
      * @param naziv - naziv novog zanra knjige.
      */
     public Zanr(int zanrId, String naziv) {
-        this.zanrId = zanrId;
-        this.naziv = naziv;
+        setZanrId(zanrId);
+        setNaziv(naziv);
     }
     /**
      * Postavlja id zanra knjige na unetu vrednost.

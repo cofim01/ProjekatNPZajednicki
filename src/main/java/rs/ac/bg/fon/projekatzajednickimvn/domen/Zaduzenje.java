@@ -63,12 +63,12 @@ public class Zaduzenje implements OpstiDomenskiObjekat {
      * @param korisnik - korisnik koji je kreirao zaduzenje.
      */
     public Zaduzenje(int brZaduzenja, Date datumZaduzenja, Date datumRazduzenja, PrimerakKnjige primerak, Clan clan, Korisnik korisnik) {
-        this.brZaduzenja = brZaduzenja;
-        this.datumZaduzenja = datumZaduzenja;
-        this.datumRazduzenja = datumRazduzenja;
-        this.primerak = primerak;
-        this.clan = clan;
-        this.korisnik = korisnik;
+        setBrZaduzenja(brZaduzenja);
+        setDatumZaduzenja(datumZaduzenja);
+        setDatumRazduzenja(datumRazduzenja);
+        setPrimerak(primerak);
+        setKorisnik(korisnik);
+        setClan(clan);
     }
 
     
