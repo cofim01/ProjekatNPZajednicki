@@ -84,8 +84,10 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja ime clana na unetu vrednost.
-     *
+     * Prosledjeno ime ne sme biti prazan String.
+     * 
      * @param ime - ime clana kao String.
+     * @throws IllegalArgumentException - ako je prosledjeno ime prazan String.
      */
     public void setIme(String ime) {
         if(ime.isEmpty()){
@@ -96,8 +98,10 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja prezime clana na unetu vrednost.
-     *
+     * Prosledjeno prezime ne sme biti prazan String.
+     * 
      * @param prezime - prezime clana kao String.
+     * @throws IllegalAccessException - ako je prosledjeno prezime prazan String.
      */
     public void setPrezime(String prezime) {
         if(prezime.isEmpty()){
@@ -108,8 +112,10 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja adresu clana na unetu vrednost.
-     *
+     * Prosledjena adresa ne sme biti prazan String.
+     * 
      * @param adresa - adresa clana kao String.
+     * @throws IllegalAccessException - ako je prosledjena adresa prazan String.
      */
     public void setAdresa(String adresa) {
         if(adresa.isEmpty()){
@@ -120,8 +126,10 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja broj telefona clana na unetu vrednost.
-     *
+     * Prosledjen broj telefona ne sme biti prazan String.
+     * 
      * @param brTelefona - broj telefona clana kao String.
+     * @throws IllegalAccessException - ako je prosledjen broj telefona prazan String.
      */
     public void setBrTelefona(String brTelefona) {
         if(brTelefona.isEmpty()){
@@ -133,8 +141,10 @@ public class Clan implements OpstiDomenskiObjekat {
     /**
      * Postavlja korisnika administratora koji je kreirao datog clana
      * biblioteke.
-     *
+     * Prosledjeni administrator ne sme biti null.
+     * 
      * @param korisnik - administrator koji je kreirao datog clana biblioteke.
+     * @throws NullPointerException - ako je prosledjeni administrator null.
      */
     public void setKorisnik(Korisnik korisnik) {
         if(korisnik==null){
@@ -145,8 +155,10 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja email clana na unetu vrednost.
-     *
+     * Prosledjeni email clana ne sme biti prazan String.
+     * 
      * @param email - email clana kao String.
+     * @throws IllegalAccessException - ako je prosledjen email clana prazan String.
      */
     public void setEmail(String email) {
         if(email.isEmpty()){
@@ -157,8 +169,10 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja status clana na unetu vrednost.
-     *
+     * Prosledjeni status clana ne sme biti prazan String.
+     * 
      * @param status - status clana kao String.
+     * @throws IllegalAccessException - ako je prosledjeni status clana prazan String.
      */
     public void setStatus(String status) {
         if(status.isEmpty()){
