@@ -63,6 +63,9 @@ public class Autor implements OpstiDomenskiObjekat {
      * @param ime - ime novog autora kao String.
      */
     public void setIme(String ime) {
+        if(ime.isEmpty()){
+            throw new IllegalArgumentException("Ime autora ne sme biti prazan string");
+        }
         this.ime = ime;
     }
 
@@ -72,6 +75,9 @@ public class Autor implements OpstiDomenskiObjekat {
      * @param prezime - prezime novog autora kao String.
      */
     public void setPrezime(String prezime) {
+        if(prezime.isEmpty()){
+            throw new IllegalArgumentException("Ime autora ne sme biti prazan string");
+        }
         this.prezime = prezime;
     }
 
