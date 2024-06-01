@@ -88,6 +88,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param ime - ime clana kao String.
      */
     public void setIme(String ime) {
+        if(ime.isEmpty()){
+            throw new IllegalArgumentException("Ime clana ne sme biti prazan string");
+        }
         this.ime = ime;
     }
 
@@ -97,6 +100,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param prezime - prezime clana kao String.
      */
     public void setPrezime(String prezime) {
+        if(prezime.isEmpty()){
+            throw new IllegalArgumentException("Prezime clana ne sme biti prazan string");
+        }
         this.prezime = prezime;
     }
 
@@ -106,6 +112,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param adresa - adresa clana kao String.
      */
     public void setAdresa(String adresa) {
+        if(adresa.isEmpty()){
+            throw new IllegalArgumentException("Adresa clana ne sme biti prazan string");
+        }
         this.adresa = adresa;
     }
 
@@ -115,6 +124,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param brTelefona - broj telefona clana kao String.
      */
     public void setBrTelefona(String brTelefona) {
+        if(brTelefona.isEmpty()){
+            throw new IllegalArgumentException("Broj telefona clana ne sme biti prazan string");
+        }
         this.brTelefona = brTelefona;
     }
 
@@ -125,6 +137,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param korisnik - administrator koji je kreirao datog clana biblioteke.
      */
     public void setKorisnik(Korisnik korisnik) {
+        if(korisnik==null){
+            throw new NullPointerException("Korisnik ne sme biti null");
+        }
         this.korisnik = korisnik;
     }
 
@@ -134,6 +149,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param email - email clana kao String.
      */
     public void setEmail(String email) {
+        if(email.isEmpty()){
+            throw new IllegalArgumentException("Email clana ne sme biti prazan string");
+        }
         this.email = email;
     }
 
@@ -143,6 +161,9 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param status - status clana kao String.
      */
     public void setStatus(String status) {
+        if(status.isEmpty()){
+            throw new IllegalArgumentException("Status clana ne sme biti prazan string");
+        }
         this.status = status;
     }
 
