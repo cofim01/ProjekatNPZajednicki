@@ -63,6 +63,9 @@ public class Knjiga implements OpstiDomenskiObjekat {
      * @param naziv - naziv knjige kao String.
      */
     public void setNaziv(String naziv) {
+        if(naziv.isEmpty()){
+            throw new IllegalArgumentException("Naziv knjige ne sme biti prazan string");
+        }
         this.naziv = naziv;
     }
     /**
@@ -70,6 +73,9 @@ public class Knjiga implements OpstiDomenskiObjekat {
      * @param primerci - lista primeraka knjige (ArrayList).
      */
     public void setPrimerci(ArrayList<PrimerakKnjige> primerci) {
+        if(primerci==null){
+            throw new NullPointerException("Primerci knjige ne smeju biti null");
+        }
         this.primerci = primerci;
     }
 
@@ -79,6 +85,9 @@ public class Knjiga implements OpstiDomenskiObjekat {
      * @param zanr - zanr knjige.
      */
     public void setZanr(Zanr zanr) {
+        if(zanr==null){
+            throw new NullPointerException("Zanr knjige ne sme biti null");
+        }
         this.zanr = zanr;
     }
     /**
@@ -86,6 +95,9 @@ public class Knjiga implements OpstiDomenskiObjekat {
      * @param korisnik - korsnik koji je kreirao knjigu.
      */
     public void setKorisnik(Korisnik korisnik) {
+        if(korisnik==null){
+            throw new NullPointerException("Korisnik knjige ne sme biti null");
+        }
         this.korisnik = korisnik;
     }
     /**
