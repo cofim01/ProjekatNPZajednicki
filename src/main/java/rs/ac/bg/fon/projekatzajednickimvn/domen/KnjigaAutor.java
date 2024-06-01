@@ -47,7 +47,10 @@ public class KnjigaAutor implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja knjigu koja je povezana sa autorom.
+     * Uneta vrednost mora biti razlicita od null.
+     * 
      * @param knjiga - knjiga koja je povezana sa autorom.
+     * @throws NullPointerException - ukoliko je prosledjena knjiga null.
      */
     public void setKnjiga(Knjiga knjiga) {
         if(knjiga==null){
@@ -56,8 +59,11 @@ public class KnjigaAutor implements OpstiDomenskiObjekat {
         this.knjiga = knjiga;
     }
     /**
-     * Postavlja autora koji je povezan sa knjigom
+     * Postavlja autora koji je povezan sa knjigom.
+     * Uneta vrednost mora biti razlicita od null.
+     * 
      * @param autor - autor koji je povezan sa knjigom.
+     * @throws NullPointerException - ukoliko je prosledjen autor null.
      */
     public void setAutor(Autor autor) {
         if(autor==null){
