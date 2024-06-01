@@ -44,6 +44,9 @@ public class Zanr implements OpstiDomenskiObjekat {
      * @param naziv - naziv zanra kao String.
      */
     public void setNaziv(String naziv) {
+        if(naziv.isEmpty()){
+            throw new IllegalArgumentException("Naziv zanra ne sme biti prazan string");
+        }
         this.naziv = naziv;
     }
     /**
