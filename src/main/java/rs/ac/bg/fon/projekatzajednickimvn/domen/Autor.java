@@ -76,7 +76,7 @@ public class Autor implements OpstiDomenskiObjekat {
      */
     public void setPrezime(String prezime) {
         if(prezime.isEmpty()){
-            throw new IllegalArgumentException("Ime autora ne sme biti prazan string");
+            throw new IllegalArgumentException("Prezime autora ne sme biti prazan string");
         }
         this.prezime = prezime;
     }
