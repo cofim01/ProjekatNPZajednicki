@@ -60,7 +60,10 @@ public class Knjiga implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja naziv knjige na unetu vrednost.
+     * Uneta vrednost ne sme biti prazan String.
+     * 
      * @param naziv - naziv knjige kao String.
+     * @throws IllegalArgumentException - ukoliko je naziv knjige prazan String.
      */
     public void setNaziv(String naziv) {
         if(naziv.isEmpty()){
@@ -70,7 +73,10 @@ public class Knjiga implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja primerke knjige na unetu vrednost.
+     * Uneta vrednost ne sme biti null.
+     * 
      * @param primerci - lista primeraka knjige (ArrayList).
+     * @throws NullPointerException - ukoliko su prosledjeni primerci null.
      */
     public void setPrimerci(ArrayList<PrimerakKnjige> primerci) {
         if(primerci==null){
@@ -82,7 +88,10 @@ public class Knjiga implements OpstiDomenskiObjekat {
     
     /**
      * Postavlja zanr knjige na unetu vrednost.
+     * Uneta vrednost ne sme biti null.
+     * 
      * @param zanr - zanr knjige.
+     * @throws NullPointerException - ukoliko je prosledjeni zanr null.
      */
     public void setZanr(Zanr zanr) {
         if(zanr==null){
@@ -92,7 +101,10 @@ public class Knjiga implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja korsnika koji je kreirao knjigu na unetog korisnika.
+     * Uneta vrednost ne sme biti null.
+     * 
      * @param korisnik - korsnik koji je kreirao knjigu.
+     * @throws NullPointerException - ukoliko je prosledjeni korisnik null.
      */
     public void setKorisnik(Korisnik korisnik) {
         if(korisnik==null){
