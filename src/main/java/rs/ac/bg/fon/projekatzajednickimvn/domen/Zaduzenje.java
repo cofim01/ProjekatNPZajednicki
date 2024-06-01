@@ -84,6 +84,9 @@ public class Zaduzenje implements OpstiDomenskiObjekat {
      * @param datumZaduzenja - datum zaduzenja primerka knjige.
      */
     public void setDatumZaduzenja(Date datumZaduzenja) {
+        if(datumZaduzenja==null){
+            throw new NullPointerException("Datum zaduzenja ne sme biti null");
+        }
         this.datumZaduzenja = datumZaduzenja;
     }
     /**
@@ -98,6 +101,9 @@ public class Zaduzenje implements OpstiDomenskiObjekat {
      * @param clan - clan koji je zaduzio primerak knjige.
      */
     public void setClan(Clan clan) {
+        if(clan==null){
+            throw new NullPointerException("Clan ne sme biti null");
+        }
         this.clan = clan;
     }
     /**
@@ -105,6 +111,9 @@ public class Zaduzenje implements OpstiDomenskiObjekat {
      * @param korisnik - korisnik koji je kreirao zaduzenje.
      */
     public void setKorisnik(Korisnik korisnik) {
+        if(korisnik==null){
+            throw new NullPointerException("Korisnik ne sme biti null");
+        }
         this.korisnik = korisnik;
     }
     /**
@@ -112,6 +121,9 @@ public class Zaduzenje implements OpstiDomenskiObjekat {
      * @param primerak - primerak knjige koji je zaduzen.
      */
     public void setPrimerak(PrimerakKnjige primerak) {
+        if(primerak==null){
+            throw new NullPointerException("Primerak ne sme biti null");
+        }
         this.primerak = primerak;
     }
     /**
