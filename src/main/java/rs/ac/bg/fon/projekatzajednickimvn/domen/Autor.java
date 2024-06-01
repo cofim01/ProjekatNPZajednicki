@@ -59,8 +59,10 @@ public class Autor implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja ime novog autora na unetu vrednost.
-     *
+     * Prosledjeno ime autora ne sme biti prazan String.
+     * 
      * @param ime - ime novog autora kao String.
+     * @throws IllegalArgumentException - ako je prosledjeno ime autora prazan String.
      */
     public void setIme(String ime) {
         if(ime.isEmpty()){
@@ -71,8 +73,10 @@ public class Autor implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja prezime novog autora na unetu vrednost.
-     *
+     * Prosledjeno prezime autora ne sme biti prazan String.
+     * 
      * @param prezime - prezime novog autora kao String.
+     * @throws IllegalArgumentException - ako je prosledjeno prezime autora prazan String.
      */
     public void setPrezime(String prezime) {
         if(prezime.isEmpty()){
