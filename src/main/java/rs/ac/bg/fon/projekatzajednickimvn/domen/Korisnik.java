@@ -56,6 +56,9 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param ime - ime korisnika kao String.
      */
     public void setIme(String ime) {
+        if(ime.isEmpty()){
+            throw new IllegalArgumentException("Ime korisnika ne sme biti prazan string");
+        }
         this.ime = ime;
     }
     /**
@@ -63,6 +66,9 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param prezime - prezime korisnika kao String. 
      */
     public void setPrezime(String prezime) {
+        if(prezime.isEmpty()){
+            throw new IllegalArgumentException("Prezime korisnika ne sme biti prazan string");
+        }
         this.prezime = prezime;
     }
     /**
@@ -70,6 +76,9 @@ public class Korisnik implements OpstiDomenskiObjekat {
      * @param password - sifra korisnika kao String.
      */
     public void setPassword(String password) {
+        if(password.isEmpty()){
+            throw new IllegalArgumentException("Sifra korisnika ne sme biti prazan string");
+        }
         this.password = password;
     }
     /**
