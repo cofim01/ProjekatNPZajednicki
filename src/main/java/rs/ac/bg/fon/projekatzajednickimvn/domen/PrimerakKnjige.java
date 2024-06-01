@@ -1,4 +1,3 @@
-
 package rs.ac.bg.fon.projekatzajednickimvn.domen;
 
 import java.sql.ResultSet;
@@ -8,9 +7,11 @@ import java.util.Objects;
 
 /**
  * Predstavlja jedan primerak knjige u bazi podataka.
+ *
  * @author Filip Mrdak
  */
-public class PrimerakKnjige implements OpstiDomenskiObjekat{
+public class PrimerakKnjige implements OpstiDomenskiObjekat {
+
     /**
      * Id primerka knjige kao int.
      */
@@ -35,14 +36,17 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
      * Status primerka knjige u biblioteci.
      */
     private String status;
-    
+
     /**
      * Podrazumevani konstruktor koji kreira novi primerak knjige.
      */
     public PrimerakKnjige() {
     }
+
     /**
-     * Parametrizovani konstruktor koji kreira novi primerak knjige i postavlja atribute primerka na unete vrednosti.
+     * Parametrizovani konstruktor koji kreira novi primerak knjige i postavlja
+     * atribute primerka na unete vrednosti.
+     *
      * @param primerakId - id primerka knjige.
      * @param brojPolice - broj police na kojoj se nalazi primerak knjige.
      * @param izdavac - izdavac primerka knjige.
@@ -59,13 +63,16 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
 
     /**
      * Vraca id primerka knjige.
+     *
      * @return id primerka knjige kao int.
      */
     public int getPrimerakId() {
         return primerakId;
     }
+
     /**
      * Vraca broj police na kojoj se nalazi primerak knjige.
+     *
      * @return broj police kao int.
      */
     public int getBrojPolice() {
@@ -74,72 +81,105 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
 
     /**
      * Vraca izdavaca primerka knjige.
+     *
      * @return izdavac primerka knjige.
      */
     public Izdavac getIzdavac() {
         return izdavac;
     }
+
     /**
      * Vraca godinu izdanja primerka knjige.
+     *
      * @return godina izdanja primerka knjige.
      */
     public int getGodinaIzdanja() {
         return godinaIzdanja;
     }
+
     /**
      * Vraca status primerka knjige.
+     *
      * @return status primerka knjige kao String.
      */
     public String getStatus() {
         return status;
     }
+
     /**
      * Vraca knjigu za koju je vezan primerak knjige.
+     *
      * @return knjiga za koju je vezan primerak knjige.
      */
     public Knjiga getKnjiga() {
         return knjiga;
     }
+
     /**
      * Postavlja id primerka knjige na unetu vrednost.
+     *
      * @param primerakId - id primerka knjige kao int.
      */
     public void setPrimerakId(int primerakId) {
         this.primerakId = primerakId;
     }
+
     /**
-     * Postavlja broj police na kojoj se nalazi primerak knjige na unetu vrednost.
+     * Postavlja broj police na kojoj se nalazi primerak knjige na unetu
+     * vrednost.
+     *
      * @param brojPolice - broj police kao int.
      */
     public void setBrojPolice(int brojPolice) {
+        if (brojPolice < 1) {
+            throw new IllegalArgumentException("Broj police mora biti veci od 0");
+        }
         this.brojPolice = brojPolice;
     }
+
     /**
      * Postavlja izdavaca primerka knjige na unetu vrednost.
+     *
      * @param izdavac - izdavac primerka knjige.
      */
     public void setIzdavac(Izdavac izdavac) {
+        if (izdavac == null) {
+            throw new NullPointerException("Izdavac primerka knjige ne sme biti null");
+        }
         this.izdavac = izdavac;
     }
+
     /**
      * Postavlja godinu izdanja primerka knjige.
+     *
      * @param godinaIzdanja - godina izdanja primerka knjige kao int.
      */
     public void setGodinaIzdanja(int godinaIzdanja) {
         this.godinaIzdanja = godinaIzdanja;
     }
+
     /**
      * Postavlja status primerka knjige na unetu vrednost.
+     *
      * @param status - status primerka knjige kao String.
      */
     public void setStatus(String status) {
-        this.status = status;
+        if (status == "Izbačena" || status == "Dostupna" || status == "Zadužena") {
+            this.status = status;
+        } else {
+            throw new IllegalArgumentException("Status primerka knjige moze imati vrednosti iz skupa vrednosti:(Izbačena,Dostupna,Zadužena)");
+        }
     }
+
     /**
      * Postavlja knjigu za koju je vezan primerak na unetu knjigu.
+     *
      * @param knjiga - knjiga za koju je vezan primerak.
      */
     public void setKnjiga(Knjiga knjiga) {
+        if(knjiga==null){
+            throw new NullPointerException("Knjiga ne sme biti null");
+        }
         this.knjiga = knjiga;
     }
 
@@ -152,7 +192,6 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
     public String getAlijas() {
         return "pk";
     }
-    
 
     @Override
     public String getKoloneZaDodavanje() {
@@ -161,63 +200,62 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
 
     @Override
     public String join() {
-        return  "JOIN knjiga k ON(pk.idKnjiga=k.KnjigaId)"+
-                "JOIN zanr z ON(k.ZanrId=z.ZanrId)"+
-                "JOIN korisnik ko ON (k.KorisnikId=ko.KorisnikId)"+
-                "JOIN izdavac i ON(pk.idIzdavac=i.IzdavacId)";
-                
+        return "JOIN knjiga k ON(pk.idKnjiga=k.KnjigaId)"
+                + "JOIN zanr z ON(k.ZanrId=z.ZanrId)"
+                + "JOIN korisnik ko ON (k.KorisnikId=ko.KorisnikId)"
+                + "JOIN izdavac i ON(pk.idIzdavac=i.IzdavacId)";
+
     }
 
     @Override
     public String getVrednostPrimarniKljuc() {
-        return "idPrimerak="+primerakId;
+        return "idPrimerak=" + primerakId;
     }
 
     @Override
     public String getKriterijum() {
-        return "WHERE idKnjiga="+knjiga.getKnjigaId();
+        return "WHERE idKnjiga=" + knjiga.getKnjigaId();
     }
 
     @Override
     public String vrednostiZaDodavanje() {
-        return "'" + knjiga.getKnjigaId() + "','" + brojPolice + "','" + godinaIzdanja + "','" + izdavac.getIzdavacId() +  "','" + status + "'";
+        return "'" + knjiga.getKnjigaId() + "','" + brojPolice + "','" + godinaIzdanja + "','" + izdavac.getIzdavacId() + "','" + status + "'";
     }
 
     @Override
     public String vrednostiZaAzuriranje() {
-        return "status='" + status+ "'";
+        return "status='" + status + "'";
     }
 
     @Override
     public String toString() {
-        return primerakId+"";
+        return primerakId + "";
     }
-    
 
     @Override
     public ArrayList<OpstiDomenskiObjekat> getLista(ResultSet rs) throws SQLException {
-        ArrayList<OpstiDomenskiObjekat> lista=new ArrayList<>();
-        while(rs.next()){
-            PrimerakKnjige primerak=new PrimerakKnjige();
+        ArrayList<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while (rs.next()) {
+            PrimerakKnjige primerak = new PrimerakKnjige();
             primerak.setPrimerakId(rs.getInt("pk.idPrimerak"));
             primerak.setBrojPolice(rs.getInt("pk.brojPolice"));
             primerak.setGodinaIzdanja(rs.getInt("pk.godinaIzdanja"));
             primerak.setStatus(rs.getString("pk.status"));
-            
-            Knjiga k=new Knjiga();
+
+            Knjiga k = new Knjiga();
             k.setKnjigaId(rs.getInt("k.KnjigaId"));
             k.setNaziv(rs.getString("k.Naziv"));
-            
-            Zanr z=new Zanr();
+
+            Zanr z = new Zanr();
             z.setNaziv(rs.getString("z.Naziv"));
             z.setZanrId(rs.getInt("ZanrId"));
             k.setZanr(z);
-            
-            Izdavac i=new Izdavac();
+
+            Izdavac i = new Izdavac();
             i.setIzdavacId(rs.getInt("i.IzdavacId"));
             i.setNaziv(rs.getString("i.Naziv"));
             primerak.setIzdavac(i);
-            
+
             Korisnik ko = new Korisnik();
             ko.setKorisnikId(rs.getInt("ko.KorisnikId"));
             ko.setIme(rs.getString("ko.Ime"));
@@ -225,20 +263,12 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat{
             ko.setPassword(rs.getString("ko.Password"));
             k.setKorisnik(ko);
             primerak.setKnjiga(k);
-            
+
             lista.add(primerak);
-        
-        
+
         }
         rs.close();
         return lista;
     }
 
-
-
-
-    
-    
-    
-    
 }
