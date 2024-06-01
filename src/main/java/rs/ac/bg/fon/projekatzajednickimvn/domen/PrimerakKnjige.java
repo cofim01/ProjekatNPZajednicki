@@ -127,8 +127,10 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
     /**
      * Postavlja broj police na kojoj se nalazi primerak knjige na unetu
      * vrednost.
-     *
+     * Prosledjeni broj police mora biti broj veci od 0.
+     * 
      * @param brojPolice - broj police kao int.
+     * @throws  IllegalArgumentException - ukoliko je broj police manji 1.
      */
     public void setBrojPolice(int brojPolice) {
         if (brojPolice < 1) {
@@ -139,8 +141,10 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja izdavaca primerka knjige na unetu vrednost.
-     *
+     * Prosledjeni izdavac ne sme biti null.
+     * 
      * @param izdavac - izdavac primerka knjige.
+     * @throws NullPointerException - ukoliko je prosledjeni izdavac null.
      */
     public void setIzdavac(Izdavac izdavac) {
         if (izdavac == null) {
@@ -160,11 +164,13 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja status primerka knjige na unetu vrednost.
-     *
+     * Status moze imati vrednosti: Izbacena, Dostupna ili Zaduzena.
+     * 
      * @param status - status primerka knjige kao String.
+     * @throws IllegalArgumentException - ukoliko prosledjeni status nema vrednost iz dozvoljenog skupa vrednosti: Izbacena, Dostupna i Zaduzena.
      */
     public void setStatus(String status) {
-        if (status == "Izbačena" || status == "Dostupna" || status == "Zadužena") {
+        if (status == "Izbacena" || status == "Dostupna" || status == "Zaduzena") {
             this.status = status;
         } else {
             throw new IllegalArgumentException("Status primerka knjige moze imati vrednosti iz skupa vrednosti:(Izbačena,Dostupna,Zadužena)");
@@ -173,8 +179,10 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja knjigu za koju je vezan primerak na unetu knjigu.
-     *
+     * Prosledjena knjiga ne sme biti null.
+     * 
      * @param knjiga - knjiga za koju je vezan primerak.
+     * @throws NullPointerException - ukoliko je prosledjena knjiga null.
      */
     public void setKnjiga(Knjiga knjiga) {
         if(knjiga==null){
