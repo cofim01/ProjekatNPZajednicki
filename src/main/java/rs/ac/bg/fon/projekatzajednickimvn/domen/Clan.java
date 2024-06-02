@@ -84,55 +84,49 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja ime clana na unetu vrednost.
-     * Prosledjeno ime ne sme biti prazan String.
-     * 
+     *
      * @param ime - ime clana kao String.
-     * @throws IllegalArgumentException - ako je prosledjeno ime prazan String.
      */
     public void setIme(String ime) {
-        if(ime.isEmpty()){
-            throw new IllegalArgumentException("Ime clana ne sme biti prazan string");
-        }
         this.ime = ime;
     }
 
     /**
      * Postavlja prezime clana na unetu vrednost.
-     * Prosledjeno prezime ne sme biti prazan String.
-     * 
+     *
      * @param prezime - prezime clana kao String.
-     * @throws IllegalAccessException - ako je prosledjeno prezime prazan String.
      */
     public void setPrezime(String prezime) {
-        if(prezime.isEmpty()){
+        if (prezime.isEmpty()) {
             throw new IllegalArgumentException("Prezime clana ne sme biti prazan string");
         }
         this.prezime = prezime;
     }
 
     /**
-     * Postavlja adresu clana na unetu vrednost.
-     * Prosledjena adresa ne sme biti prazan String.
-     * 
+     * Postavlja adresu clana na unetu vrednost. Prosledjena adresa ne sme biti
+     * prazan String.
+     *
      * @param adresa - adresa clana kao String.
      * @throws IllegalAccessException - ako je prosledjena adresa prazan String.
      */
     public void setAdresa(String adresa) {
-        if(adresa.isEmpty()){
+        if (adresa.isEmpty()) {
             throw new IllegalArgumentException("Adresa clana ne sme biti prazan string");
         }
         this.adresa = adresa;
     }
 
     /**
-     * Postavlja broj telefona clana na unetu vrednost.
-     * Prosledjen broj telefona ne sme biti prazan String.
-     * 
+     * Postavlja broj telefona clana na unetu vrednost. Prosledjen broj telefona
+     * ne sme biti prazan String.
+     *
      * @param brTelefona - broj telefona clana kao String.
-     * @throws IllegalAccessException - ako je prosledjen broj telefona prazan String.
+     * @throws IllegalAccessException - ako je prosledjen broj telefona prazan
+     * String.
      */
     public void setBrTelefona(String brTelefona) {
-        if(brTelefona.isEmpty()){
+        if (brTelefona.isEmpty()) {
             throw new IllegalArgumentException("Broj telefona clana ne sme biti prazan string");
         }
         this.brTelefona = brTelefona;
@@ -140,42 +134,43 @@ public class Clan implements OpstiDomenskiObjekat {
 
     /**
      * Postavlja korisnika administratora koji je kreirao datog clana
-     * biblioteke.
-     * Prosledjeni administrator ne sme biti null.
-     * 
+     * biblioteke. Prosledjeni administrator ne sme biti null.
+     *
      * @param korisnik - administrator koji je kreirao datog clana biblioteke.
      * @throws NullPointerException - ako je prosledjeni administrator null.
      */
     public void setKorisnik(Korisnik korisnik) {
-        if(korisnik==null){
+        if (korisnik == null) {
             throw new NullPointerException("Korisnik ne sme biti null");
         }
         this.korisnik = korisnik;
     }
 
     /**
-     * Postavlja email clana na unetu vrednost.
-     * Prosledjeni email clana ne sme biti prazan String.
-     * 
+     * Postavlja email clana na unetu vrednost. Prosledjeni email clana ne sme
+     * biti prazan String.
+     *
      * @param email - email clana kao String.
-     * @throws IllegalAccessException - ako je prosledjen email clana prazan String.
+     * @throws IllegalAccessException - ako je prosledjen email clana prazan
+     * String.
      */
     public void setEmail(String email) {
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             throw new IllegalArgumentException("Email clana ne sme biti prazan string");
         }
         this.email = email;
     }
 
     /**
-     * Postavlja status clana na unetu vrednost.
-     * Prosledjeni status clana ne sme biti prazan String.
-     * 
+     * Postavlja status clana na unetu vrednost. Prosledjeni status clana ne sme
+     * biti prazan String.
+     *
      * @param status - status clana kao String.
-     * @throws IllegalAccessException - ako je prosledjeni status clana prazan String.
+     * @throws IllegalAccessException - ako je prosledjeni status clana prazan
+     * String.
      */
     public void setStatus(String status) {
-        if(status.isEmpty()){
+        if (status.isEmpty()) {
             throw new IllegalArgumentException("Status clana ne sme biti prazan string");
         }
         this.status = status;
