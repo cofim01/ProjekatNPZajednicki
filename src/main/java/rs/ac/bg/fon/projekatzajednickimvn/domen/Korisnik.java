@@ -53,7 +53,10 @@ public class Korisnik implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja ime korisnika na unetu vrednost.
+     * Prosledjeno ime ne sme biti prazan String.
+     * 
      * @param ime - ime korisnika kao String.
+     * @throws IllegalArgumentException - ukoliko je prosledjeno ime prazan String.
      */
     public void setIme(String ime) {
         if(ime.isEmpty()){
@@ -63,7 +66,10 @@ public class Korisnik implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja prezime korisnika na unetu vrednost.
-     * @param prezime - prezime korisnika kao String. 
+     * Prosledjeno prezime ne sme biti prazan String.
+     * 
+     * @param prezime - prezime korisnika kao String.
+     * @throws IllegalArgumentException - ukoliko je prosledjeno prezime prazan String.
      */
     public void setPrezime(String prezime) {
         if(prezime.isEmpty()){
@@ -73,7 +79,10 @@ public class Korisnik implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja sifru korisnika na unetu vrednost.
+     * Prosledjena sifra ne sme biti prazan String.
+     * 
      * @param password - sifra korisnika kao String.
+     * @throws IllegalArgumentException - ukoliko je prosledjena sifra prazan String.
      */
     public void setPassword(String password) {
         if(password.isEmpty()){

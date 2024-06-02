@@ -41,7 +41,10 @@ public class Izdavac implements OpstiDomenskiObjekat {
     }
     /**
      * Postavlja naziv izdavaca na unetu vrednost.
+     * Uneta vrednost ne sme biti prazan String.
+     * 
      * @param naziv - naziv izdavaca kao String.
+     * @throws IllegalArgumentException - ukoliko je naziv izdavaca prazan String.
      */
     public void setNaziv(String naziv) {
         if(naziv.isEmpty()){
