@@ -88,9 +88,6 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param ime - ime clana kao String.
      */
     public void setIme(String ime) {
-        if(ime.isEmpty()){
-            throw new IllegalArgumentException("Ime clana ne sme biti prazan string");
-        }
         this.ime = ime;
     }
 
@@ -100,9 +97,6 @@ public class Clan implements OpstiDomenskiObjekat {
      * @param prezime - prezime clana kao String.
      */
     public void setPrezime(String prezime) {
-        if(prezime.isEmpty()){
-            throw new IllegalArgumentException("Prezime clana ne sme biti prazan string");
-        }
         this.prezime = prezime;
     }
 

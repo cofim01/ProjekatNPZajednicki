@@ -63,9 +63,6 @@ public class Knjiga implements OpstiDomenskiObjekat {
      * @param naziv - naziv knjige kao String.
      */
     public void setNaziv(String naziv) {
-        if(naziv.isEmpty()){
-            throw new IllegalArgumentException("Naziv knjige ne sme biti prazan string");
-        }
         this.naziv = naziv;
     }
     /**

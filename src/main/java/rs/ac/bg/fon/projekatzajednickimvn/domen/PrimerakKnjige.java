@@ -164,11 +164,8 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
      * @param status - status primerka knjige kao String.
      */
     public void setStatus(String status) {
-        if (status == "Izbačena" || status == "Dostupna" || status == "Zadužena") {
-            this.status = status;
-        } else {
-            throw new IllegalArgumentException("Status primerka knjige moze imati vrednosti iz skupa vrednosti:(Izbačena,Dostupna,Zadužena)");
-        }
+
+        this.status = status;
     }
 
     /**
@@ -177,7 +174,7 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
      * @param knjiga - knjiga za koju je vezan primerak.
      */
     public void setKnjiga(Knjiga knjiga) {
-        if(knjiga==null){
+        if (knjiga == null) {
             throw new NullPointerException("Knjiga ne sme biti null");
         }
         this.knjiga = knjiga;
