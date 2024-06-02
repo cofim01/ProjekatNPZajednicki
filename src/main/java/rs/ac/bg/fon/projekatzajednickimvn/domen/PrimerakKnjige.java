@@ -169,8 +169,6 @@ public class PrimerakKnjige implements OpstiDomenskiObjekat {
     public void setStatus(String status) {
         this.status = status;
 
-
-        this.status = status;
     }
 
     /**
