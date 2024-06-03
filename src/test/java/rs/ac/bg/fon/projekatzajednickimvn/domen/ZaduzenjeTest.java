@@ -75,6 +75,12 @@ public class ZaduzenjeTest {
         z.setDatumZaduzenja(d);
         assertEquals(d, z.getDatumZaduzenja());
     }
+    
+    @Test
+    public void testSetDatumZaduzenjaNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->z.setDatumZaduzenja(null));
+        assertEquals(e.getMessage(), "Datum zaduzenja ne sme biti null");
+    }
 
     @Test
     public void testSetDatumRazduzenja() {
@@ -99,6 +105,12 @@ public class ZaduzenjeTest {
         assertEquals("0615533888", z.getClan().getBrTelefona());
         assertEquals(k, z.getClan().getKorisnik());
     }
+    
+    @Test
+    public void testSetClanNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->z.setClan(null));
+        assertEquals(e.getMessage(), "Clan ne sme biti null");
+    }
 
     @Test
     public void testSetKorisnik() {
@@ -108,6 +120,12 @@ public class ZaduzenjeTest {
         k.setKorisnikId(1);
         k.setPassword("Pera01");
         z.setKorisnik(k);
+    }
+    
+    @Test
+    public void testSetKorisnikNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->z.setKorisnik(null));
+        assertEquals(e.getMessage(), "Korisnik ne sme biti null");
     }
 
     @Test
@@ -133,6 +151,12 @@ public class ZaduzenjeTest {
         assertEquals("Dostupan", z.getPrimerak().getStatus());
         assertEquals(knjiga, z.getPrimerak().getKnjiga());
 
+    }
+    
+    @Test
+    public void testSetPrimerakNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->z.setPrimerak(null));
+        assertEquals(e.getMessage(), "Primerak ne sme biti null");
     }
 
     @Test
