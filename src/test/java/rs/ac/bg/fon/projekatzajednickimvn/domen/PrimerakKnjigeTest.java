@@ -30,6 +30,12 @@ public class PrimerakKnjigeTest {
         pk.setBrojPolice(25);
         assertEquals(25, pk.getBrojPolice());
     }
+    
+    @Test
+    public void testSetBrojPoliceNeodgovarajuci() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->pk.setBrojPolice(0));
+        assertEquals(e.getMessage(), "Broj police mora biti veci od 0");
+    }
 
     @Test
     public void testSetIzdavac() {
@@ -37,6 +43,13 @@ public class PrimerakKnjigeTest {
         pk.setIzdavac(i);
         assertEquals(5, pk.getIzdavac().getIzdavacId());
         assertEquals("Delfi", pk.getIzdavac().getNaziv());
+
+    }
+    
+    @Test
+    public void testSetIzdavacNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->pk.setIzdavac(null));
+        assertEquals(e.getMessage(), "Izdavac primerka knjige ne sme biti null");
 
     }
 
@@ -64,6 +77,13 @@ public class PrimerakKnjigeTest {
         assertEquals(5, pk.getKnjiga().getKnjigaId());
         assertEquals("Nova knjiga", pk.getKnjiga().getNaziv());
         assertEquals(korisnik, pk.getKnjiga().getKorisnik());
+    }
+    
+    @Test
+    public void testSetKnjigaNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->pk.setKnjiga(null));
+        assertEquals(e.getMessage(), "Knjiga ne sme biti null");
+
     }
 
     @Test
