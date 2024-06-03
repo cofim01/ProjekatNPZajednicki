@@ -38,6 +38,12 @@ public class ZanrTest {
         z.setNaziv("Komedija");
         assertEquals("Komedija", z.getNaziv());
     }
+    
+    @Test
+    public void testSetNazivPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->z.setNaziv(""));
+        assertEquals(e.getMessage(), "Naziv zanra ne sme biti prazan string");
+    }
 
 
     @Test
