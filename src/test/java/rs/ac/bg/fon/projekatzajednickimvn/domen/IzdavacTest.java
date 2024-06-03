@@ -39,6 +39,12 @@ public class IzdavacTest {
         i.setNaziv("Laguna");
         assertEquals("Laguna", i.getNaziv());
     }
+    
+    @Test
+    public void testSetNazivPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->i.setNaziv(""));
+        assertEquals(e.getMessage(), "Naziv izdavaca ne sme biti prazan string");
+    }
 
     
     @Test
