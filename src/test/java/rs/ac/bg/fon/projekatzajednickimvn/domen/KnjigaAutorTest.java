@@ -55,6 +55,12 @@ public class KnjigaAutorTest {
         assertEquals("Laguna", ka.getKnjiga().getPrimerci().get(0).getIzdavac().getNaziv());
         assertEquals("Dostupna", ka.getKnjiga().getPrimerci().get(0).getStatus());
     }
+    
+    @Test
+    public void testSetKnjigaNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->ka.setKnjiga(null));
+        assertEquals(e.getMessage(), "Knjiga ne sme biti null");
+    }
 
 
     @Test
@@ -64,6 +70,12 @@ public class KnjigaAutorTest {
         assertEquals(1, ka.getAutor().getAutorId());
         assertEquals("Ivo", ka.getAutor().getIme());
         assertEquals("Andric", ka.getAutor().getPrezime());
+    }
+    
+    @Test
+    public void testSetAutorNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->ka.setAutor(null));
+        assertEquals(e.getMessage(), "Autor ne sme biti null");
     }
 
 
