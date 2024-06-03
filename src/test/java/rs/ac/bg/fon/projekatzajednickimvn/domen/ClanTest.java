@@ -68,11 +68,21 @@ public class ClanTest {
         assertEquals("Bele Bartoka 3", c.getAdresa());
     }
 
+    @Test
+    public void testSetAdresaPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->c.setAdresa(""));
+        assertEquals(e.getMessage(), "Adresa clana ne sme biti prazan string");
+    }
 
     @Test
     public void testSetBrTelefona() {
         c.setBrTelefona("0655666555");
         assertEquals("0655666555", c.getBrTelefona());
+    }
+    
+    public void testSetBrTelefonaPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->c.setBrTelefona(""));
+        assertEquals(e.getMessage(), "Broj telefona clana ne sme biti prazan string");
     }
 
 
@@ -90,12 +100,22 @@ public class ClanTest {
         assertEquals(1, c.getKorisnik().getKorisnikId());
         assertEquals("Pera01", c.getKorisnik().getPassword());
     }
-
+    
+    @Test
+    public void testSetKorisnikNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->c.setKorisnik(null));
+        assertEquals(e.getMessage(), "Korisnik ne sme biti null");
+    }
     
     @Test
     public void testSetEmail() {
         c.setEmail("mikam@gmail.com");
         assertEquals("mikam@gmail.com", c.getEmail());
+    }
+    
+    public void testSetEmailPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->c.setEmail(""));
+        assertEquals(e.getMessage(), "Email clana ne sme biti prazan string");
     }
 
 
@@ -105,7 +125,10 @@ public class ClanTest {
         assertEquals("Aktivan", c.getStatus());
     }
 
-
+    public void testSetStatusPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->c.setStatus(""));
+        assertEquals(e.getMessage(), "Status clana ne sme biti prazan string");
+    }
 
     @Test
     public void testToString() {
