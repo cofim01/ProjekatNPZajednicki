@@ -59,6 +59,12 @@ public class KnjigaTest {
         assertEquals("Laguna", knjiga.getPrimerci().get(0).getIzdavac().getNaziv());
         assertEquals("Dostupna", knjiga.getPrimerci().get(0).getStatus());
     }
+    
+    @Test
+    public void testSetPrimerciNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->knjiga.setPrimerci(null));
+        assertEquals(e.getMessage(),"Primerci knjige ne smeju biti null");
+    }
 
  
     @Test
@@ -69,6 +75,11 @@ public class KnjigaTest {
         assertEquals("Komedija", knjiga.getZanr().getNaziv());
     }
 
+    @Test
+    public void testSetZanrNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->knjiga.setZanr(null));
+        assertEquals(e.getMessage(),"Zanr knjige ne sme biti null");
+    }
 
     @Test
     public void testSetKorisnik() {
@@ -79,6 +90,12 @@ public class KnjigaTest {
         assertEquals("Peric", knjiga.getKorisnik().getPrezime());
         assertEquals("Pera123", knjiga.getKorisnik().getPassword());
         
+    }
+    
+    @Test
+    public void testSetKorisnikNull() {
+        Exception e=assertThrows(java.lang.NullPointerException.class, ()->knjiga.setKorisnik(null));
+        assertEquals(e.getMessage(),"Korisnik knjige ne sme biti null");
     }
 
 
