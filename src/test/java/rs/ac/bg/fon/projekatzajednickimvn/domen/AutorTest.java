@@ -49,12 +49,24 @@ public class AutorTest {
         assertEquals("Filip", a.getIme());
     }
 
+    @Test
+    public void testSetImePrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->a.setIme(""));
+        assertEquals(e.getMessage(),"Ime autora ne sme biti prazan string");
+    }
 
     @Test
     public void testSetPrezime() {
         a.setPrezime("Filipovic");
         assertEquals("Filipovic", a.getPrezime());
     }
+    
+    @Test
+    public void testSetPrezimePrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->a.setPrezime(""));
+        assertEquals(e.getMessage(),"Prezime autora ne sme biti prazan string");
+    }
+
 
 
     @Test
