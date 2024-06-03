@@ -39,6 +39,12 @@ public class KorisnikTest {
         k.setIme("Nikola");
         assertEquals("Nikola", k.getIme());
     }
+    
+    @Test
+    public void testSetImePrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->k.setIme(""));
+        assertEquals(e.getMessage(), "Ime korisnika ne sme biti prazan string");
+    }
 
 
     @Test
@@ -46,11 +52,23 @@ public class KorisnikTest {
         k.setPrezime("Nikolic");
         assertEquals("Nikolic", k.getPrezime());
     }
+    
+    @Test
+    public void testSetPrezimePrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->k.setPrezime(""));
+        assertEquals(e.getMessage(), "Prezime korisnika ne sme biti prazan string");
+    }
 
     @Test
     public void testSetPassword() {
         k.setPassword("nikola01");
         assertEquals("nikola01", k.getPassword());
+    }
+    
+    @Test
+    public void testSetPasswordPrazanString() {
+        Exception e=assertThrows(java.lang.IllegalArgumentException.class, ()->k.setPassword(""));
+        assertEquals(e.getMessage(), "Sifra korisnika ne sme biti prazan string");
     }
 
 
